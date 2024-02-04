@@ -17,8 +17,8 @@ contract nft is ERC721URIStorage {
         string memory imageURI = svgToURI(_svg);
         string memory tokenURI = formatTokenURI(imageURI);
         _setTokenURI(tokenCounter, tokenURI);
-        emit CreateNFT(tokenCounter, tokenURI);
         tokenCounter = tokenCounter + 1;
+        emit CreateNFT(tokenCounter, tokenURI);
     }
 
     function svgToURI(string memory _svg) public pure returns (string memory) {
@@ -35,7 +35,7 @@ contract nft is ERC721URIStorage {
     function formatTokenURI(
         string memory _imageURI
     ) public pure returns (string memory) {
-        string memory baseURL = "data:application/json;base64";
+        string memory baseURL = "data:application/json;base64,";
         return
             string(
                 abi.encodePacked(
