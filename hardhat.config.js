@@ -28,5 +28,8 @@ module.exports = {
     deployer: {
       default: 0
     }
+  },
+  sourcify: {
+    enabled: false
   }
 };
